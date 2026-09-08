@@ -1,26 +1,22 @@
-# Nombre del ejecutable final
+# Nombre del programa final
 PROGRAMA := scanner2
 
-# Compilador
+# Compilador y flags
 CC := gcc
+CFLAGS := -Wall
 
 # Regla principal
 all: $(PROGRAMA)
 
-# Regla para construir el scanner
-# Dependencias: scanner2.l (Flex genera lex.yy.c a partir de él)
+# Regla para generar el ejecutable usando flex y gcc
+# TODO 1 y 2 resueltos acá abajo:
 $(PROGRAMA): scanner2.l
-	# TODO 1: Ejecutá Flex sobre scanner2.l para generar lex.yy.c
-	#         Comando: flex <archivo.l>
+	flex scanner2.l
+	$(CC) $(CFLAGS) lex.yy.c -o $(PROGRAMA)
 
-	# TODO 2: Compilá lex.yy.c con gcc para generar el ejecutable
-	#         Usá las variables $(CC), el archivo lex.yy.c,
-	#         y el flag -o $(PROGRAMA)
-
-# Regla para limpiar archivos generados
+# Regla para limpiar los archivos generados
+# TODO 3 resuelto acá abajo:
 clean:
-	# TODO 3: Eliminá el ejecutable y el archivo generado por Flex
-	#         Archivos a eliminar: $(PROGRAMA) y lex.yy.c
-	#         Usá rm -f
+	rm -f $(PROGRAMA) lex.yy.c
 
 .PHONY: all clean

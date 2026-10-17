@@ -38,7 +38,7 @@ int AreEqual(const char *s1, const char *s2) {
 /* ── AreDecimalDigits — tiene un bug, encontrarlo y corregirlo ───────────── */
 
 int AreDecimalDigits(const char *s) {
-    if (IsEmpty(s)) return 1;  /* bug: ¿que deberia devolver para cadena vacia? */
+    if (IsEmpty(s)) return 0;  /* bug: ¿que deberia devolver para cadena vacia? */
     for (const char *p = s; !IsEmpty(p); p++)
         if (*p < '0' || *p > '9')
             return 0;

@@ -32,7 +32,7 @@ int AreEqual(const char *s1, const char *s2) {
         s1++;
         s2++;
     }
-    return 1;  /* bug: ¿que pasa si una cadena es mas larga que la otra? */
+    return IsEmpty(s1) && IsEmpty(s2);  /* bug: ¿que pasa si una cadena es mas larga que la otra? */
 }
 
 /* ── AreDecimalDigits — tiene un bug, encontrarlo y corregirlo ───────────── */

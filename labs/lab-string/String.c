@@ -18,8 +18,9 @@ int IsEmpty(const char *s) {
 /* ── GetLength — implementar siguiendo el README.md ─────────────────────── */
 
 int GetLength(const char *s) {
-    (void)s;
-    return -1;  /* reemplazar con la implementacion */
+    if (IsEmpty(s))
+        return 0;
+    return 1 + GetLength(s + 1);
 }
 
 /* ── AreEqual — tiene un bug, encontrarlo y corregirlo ──────────────────── */

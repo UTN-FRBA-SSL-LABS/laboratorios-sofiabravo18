@@ -11,7 +11,8 @@
  *   - Si alguno falla, abort() detiene el programa con exit != 0
  */
 
-int main(void) {
+int main(void)
+{
 
     /* ── IsEmpty — ya implementada ──────────────────────────────────────── */
     assert(IsEmpty("") == 1);
@@ -19,10 +20,10 @@ int main(void) {
     assert(IsEmpty("hola") == 0);
 
     /* ── GetLength — descomentar cuando implementes la funcion ──────────── */
-    /* assert(GetLength("") == 0); */
-    /* assert(GetLength("a") == 1); */
-    /* assert(GetLength("hola") == 4); */
-    /* assert(GetLength("hola mundo") == 10); */
+    assert(GetLength("") == 0);
+    assert(GetLength("a") == 1);
+    assert(GetLength("hola") == 4);
+    assert(GetLength("hola mundo") == 10);
 
     /* ── AreEqual — tiene un bug, estos tests ya estan activos ──────────── */
     assert(AreEqual("", "") == 1);
